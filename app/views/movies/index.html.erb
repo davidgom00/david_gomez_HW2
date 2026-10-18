@@ -5,9 +5,18 @@
 
 <thead>Sort by: 
   <tr>
-    <th><%= link_to "Movie Title", movies_path(:sort => :title) %></th>
-    <th><%= link_to "Release Date", movies_path(:sort => :release_date) %></th>
-    <th><%= link_to "Rating", movies_path(:sort => :rating) %></th>
+    <th><%= link_to "Movie Title", movies_path(
+      sort: "title", 
+      direction: params[:direction] == "asc" ? "desc" : "asc"
+    ) %></th>
+    <th><%= link_to "Release Date", movies_path(
+      sort: "release_date",
+      direction: params[:direction] == "asc" ? "desc" : "asc"
+    ) %></th>
+    <th><%= link_to "Rating", movies_path(
+      sort: "rating",
+      direction: params[:direction] == "asc" ? "desc" : "asc"
+    ) %></th>
   </tr>
 </thead>
 
