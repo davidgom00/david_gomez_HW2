@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
       session[:sort] = params[:sort]
       session[:direction] = params[:direction]
     elsif session[:sort]
-      @movies = @movies.order(session["#{s_column} #{direction}"])
+      @movies = @movies.order(session[:sort] => session[:direction])
     else
       @movies = Movie.all
     end
