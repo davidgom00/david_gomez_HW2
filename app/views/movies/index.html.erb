@@ -11,7 +11,7 @@
         sort: "title", 
         direction: params[:direction] == "asc" ? "desc" : "asc",
       ) %>
-      <%= params[:sort] == "title" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
+      <%= params[:sort] == "title" ? (params[:direction] == "asc" ? "↑" : "↓") : nil %>
     
     </th>
     <th>
@@ -20,14 +20,14 @@
         direction: params[:direction] == "asc" ? "desc" : "asc",
       
       ) %>
-      <%= params[:sort] == "release_date" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
+      <%= params[:sort] == "release_date" ? (params[:direction] == "asc" ? "↑" : "↓") : nil %>
     </th>
     <th>
       <%= link_to "Rating", movies_path(
         sort: "rating",
         direction: params[:direction] == "asc" ? "desc" : "asc",
       ) %>
-       <%= params[:sort] == "rating" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
+       <%= params[:sort] == "rating" ? (params[:direction] == "asc" ? "↑" : "↓") : nil %>
     </th>
   </tr>
 </thead>
