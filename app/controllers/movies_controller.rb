@@ -4,6 +4,19 @@ class MoviesController < ApplicationController
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
+
+    sort = params[:sort]
+    case sort
+    when 'title'
+      ordering,@title_header = { title: :asc }, 'hilite'
+    when 'release_date'
+      ordering,@date_header = { release_date: :asc }, 'hilite'
+    end
+    @all_ratings = Movie.all_ratings
+    @selected_ratings = params[:ratings] || session[:ratings] || {}
+    if @selected_ratings == {}
+      @selected_ratings = Hash[@all_ratings.map {|rating| [rating, rating]}]
+    end 
   end
 
   # GET /movies/1 or /movies/1.json
