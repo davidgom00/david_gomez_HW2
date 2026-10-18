@@ -3,16 +3,15 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
 
-    sort = params[:sort]
-    case sort
-    when 'title'
-      ordering,@title_header = { title: :asc }, 'hilite'
-    when 'release_date'
-      ordering,@date_header = { release_date: :asc }, 'hilite'
-    when 'rating'
-      ordering,@rating_header = { rating: :asc }, 'hilite'
+    if params[:sort] == 'title'
+      @movies = @movies.order(:title)
+    elsif params[:sort] == 'release_date'
+      @movies = @movies.order(:release_date)
+    elsif params[:sort] == 'rating'
+      @movies = @movies.order(:rating)
+    else
+      @movies = Movie.all
     end
   end
 
