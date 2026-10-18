@@ -8,23 +8,22 @@
     <th>
       <%= link_to "Movie Title", movies_path(
         sort: "title", 
-        direction: params[:direction] == "asc" ? "desc" : "asc",
+        direction: params[:direction] == "asc" ? "desc" : "asc"
       ) %>
       <%= params[:sort] == "title" ? (params[:direction] == "asc" ? "↑" : "↓") : ""%>
-    
+
     </th>
     <th>
       <%= link_to "Release Date", movies_path(
         sort: "release_date",
-        direction: params[:direction] == "asc" ? "desc" : "asc",
-      
+        direction: params[:direction] == "asc" ? "desc" : "asc"
       ) %>
       <%= params[:sort] == "release_date" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
     </th>
     <th>
       <%= link_to "Rating", movies_path(
         sort: "rating",
-        direction: params[:direction] == "asc" ? "desc" : "asc",
+        direction: params[:direction] == "asc" ? "desc" : "asc"
       ) %>
        <%= params[:sort] == "rating" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
     </th>
