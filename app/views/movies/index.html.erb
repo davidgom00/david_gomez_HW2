@@ -1,4 +1,3 @@
-
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Movies" %>
@@ -11,7 +10,7 @@
         sort: "title", 
         direction: params[:direction] == "asc" ? "desc" : "asc",
       ) %>
-      <%= params[:sort] == "title" ? (params[:direction] == "asc" ? "↑" : "↓") : nil %>
+      <%= params[:sort] == "title" ? (params[:direction] == "asc" ? "↑" : "↓") : ""%>
     
     </th>
     <th>
@@ -20,14 +19,14 @@
         direction: params[:direction] == "asc" ? "desc" : "asc",
       
       ) %>
-      <%= params[:sort] == "release_date" ? (params[:direction] == "asc" ? "↑" : "↓") : nil %>
+      <%= params[:sort] == "release_date" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
     </th>
     <th>
       <%= link_to "Rating", movies_path(
         sort: "rating",
         direction: params[:direction] == "asc" ? "desc" : "asc",
       ) %>
-       <%= params[:sort] == "rating" ? (params[:direction] == "asc" ? "↑" : "↓") : nil %>
+       <%= params[:sort] == "rating" ? (params[:direction] == "asc" ? "↑" : "↓") : "" %>
     </th>
   </tr>
 </thead>
