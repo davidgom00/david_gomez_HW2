@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     direction = %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
     
     @movies = Movie.all
-=begin    
+  
     if params[:sort]
       @movies = @movies.order("#{s_column} #{direction}")
       session[:sort] = params[:sort]
@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
     else
       @movies = Movie.all
     end
-=end
+
   end
 
   # GET /movies/1 or /movies/1.json
