@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Deployed app:
+https://rottenpotatoesapp-f4544b59c071.herokuapp.com/movies
